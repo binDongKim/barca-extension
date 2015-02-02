@@ -1,4 +1,6 @@
-## Developing Google Chrome Extensions Source Code
+## Super Simple Barca Extension
 
-Here's the source code for the Nettuts+ article on Developing Google Chrome 
-Extensions, written by Krasimir Tsonev.
+There is no direction for this project.
+
+The reason why It's name is barca-extension is I'm a huge fan of Barca.
+That's all.
