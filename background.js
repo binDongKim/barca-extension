@@ -1,11 +1,12 @@
 // omnibox
 chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
-	suggest([
-	  {content: "color-divs", description: "Make everything red"}
-	]);
+  suggest([
+    {content: "color-divs", description: "Make everything red"}
+  ]);
 });
+
 chrome.omnibox.onInputEntered.addListener(function(text) {
-	if(text == "color-divs") colorDivs();
+  navigate("http://endic.naver.com/search.nhn?sLn=kr&searchOption=all&query=" + text);
 });
 
 // listening for an event / one-time requests
@@ -23,19 +24,33 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 // coming from devtools
 chrome.extension.onConnect.addListener(function (port) {
     port.onMessage.addListener(function (message) {
-       	switch(port.name) {
-			case "color-divs-port":
-				colorDivs();
-			break;
-		}
+        switch(port.name) {
+      case "color-divs-port":
+        colorDivs();
+      break;
+    }
     });
 });
 
 // send a message to the content script
 var colorDivs = function() {
-	chrome.tabs.getSelected(null, function(tab){
-	    chrome.tabs.sendMessage(tab.id, {type: "colors-div", color: "#F00"});
-	    // setting a badge
-		chrome.browserAction.setBadgeText({text: "red!"});
-	});
+  chrome.tabs.getSelected(null, function(tab){
+      chrome.tabs.sendMessage(tab.id, {type: "colors-div", color: "#F00"});
+      // setting a badge
+    chrome.browserAction.setBadgeText({text: "red!"});
+  });
+}
+
+/************************************/
+function resetDefaultSuggestion() {
+  chrome.omnibox.setDefaultSuggestion({
+    description: 'Typing: %s'
+  });
+}
+resetDefaultSuggestion();
+
+function navigate(url) {
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    chrome.tabs.update(tabs[0].id, {url: url});
+  });
 }
