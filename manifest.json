@@ -1,11 +1,11 @@
 {
-  "name": "BrowserExtension",
+  "name": "BarcaExtension",
   "version": "0.0.1",
   "manifest_version": 2,
   "description" : "Description ...",
   "icons": { "16": "icons/16x16.png", "48": "icons/48x48.png", "128": "icons/128x128.png" },
 
-  "omnibox": { "keyword" : "yeah" },
+  "omnibox": { "keyword" : "Qoo" }, // What keyword a user can type into the Chrome's omnibox to trigger our extension
 
   "browser_action": {
     // "default_icon": {
