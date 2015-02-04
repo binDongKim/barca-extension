@@ -1,6 +1,12 @@
 ## Super Simple Barca Extension
 
-There is no direction for this project.
+>###There is no specific purpose for this project.
 
-The reason why It's name is barca-extension is I'm a huge fan of Barca.
-That's all.
+>The reason why Its name is 'barca-extension' is because I'm a huge fan of Barca. *That's all.*
+
+## Trail the functionality
+
+| Date | Functionality |
+| ---- | ------------- |
+|2015.02.03 | Connect chrome omnibox to naver dictionary through keyword 'qoo' |
+|2015.02.04 | Enable to add English expressions to local text file through extension icon |
