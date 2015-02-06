@@ -10,3 +10,4 @@
 | ---- | ------------- |
 |2015.02.03 | Connect chrome omnibox to naver dictionary through keyword 'qoo' |
 |2015.02.04 | Enable to add English expressions to local text file through extension icon |
+|2015.02.06 | Add **sweetalert** *(library)* to notice The request is handled or not ( ~~Note that, I manipulated the library to resize the alert~~ ) |
