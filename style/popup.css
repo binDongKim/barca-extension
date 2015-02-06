@@ -3,7 +3,6 @@ body {
   height: 100%;
 }
 
-.expression-wrapper {
-  display: inline-block;
-  width: 340px;
+.clean-button {
+  margin-left: -4px;
 }
