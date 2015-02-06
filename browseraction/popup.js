@@ -8,6 +8,8 @@
         } else {
           swal('Something wrong!');
         }
+      }).fail(function() {
+        swal('Run Server first!');
       });
       ev.preventDefault();
     });
