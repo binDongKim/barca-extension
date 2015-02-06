@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/expressions', function (req, res) {
   var expression = req.body.expression;
-  fs.appendFile('/Users/qoo/Documents/English - Nice Expressions.txt', '\n' + expression, function (err) {
+  fs.appendFile('/Users/qoo/Documents/English - Nice Expressions.md', '>' + expression + '\n\n***\n\n', function (err) {
     if (err) return console.log(err);
     res.end('Success');
   });
