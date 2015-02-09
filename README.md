@@ -2,9 +2,9 @@
 
 >###There is no specific purpose for this project.
 
->The reason why Its name is 'barca-extension' is because I'm a huge fan of Barca. *That's all.*
+>The reason it's named 'barca-extension' is because I'm a huge fan of Barca. *That's all.*
 
->Well, At least now, It works as **English helper program**.
+>Well, At least now, It works as an **English helper program**.
 
 ## Trail the functionality
 
