@@ -7,13 +7,40 @@
     <link href="/style/popup.css" rel="stylesheet">
   </head>
   <body>
-    <form id="form-expression">
-      <textarea class="form-control" rows="5" id="expression" placeholder="Such a nice expression!"></textarea>
-      <button type="submit" class="btn btn-primary">Add</button>
-      <button type="button" class="btn btn-default clean-button" id="clean-button">Clean</button>
-    </form>
+    <div role="tabpanel">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#words" aria-controls="words" role="tab" data-toggle="tab">Words</a></li>
+        <li role="presentation"><a href="#expressions" aria-controls="expressions" role="tab" data-toggle="tab">Expressions</a></li>
+        <li role="presentation"><a href="#ask-to-briana" aria-controls="ask-to-briana" role="tab" data-toggle="tab">Ask to Briana</a></li>
+      </ul>
+
+      <form data-english-form>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="words">
+            <div class="form-group">
+              <label class="sr-only" for="english">English</label>
+              <input type="text" class="form-control" id="english" placeholder="Music">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="korean">Korean</label>
+              <input type="text" class="form-control" id="korean" placeholder="음악">
+            </div>
+            <textarea class="form-control" rows="3" placeholder="Music is called '음악' in Korean"></textarea>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="expressions">
+            <textarea class="form-control" rows="5" placeholder="Such a nice expression!"></textarea>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="ask-to-briana">
+            <textarea class="form-control" rows="5" placeholder="Ask to Briana"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="button" class="btn btn-default clean-button" data-clean-button>Clean</button>
+      </form>
+    </div>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/bower_components/sweetalert/lib/sweet-alert.js"></script>
     <script src="popup.js"></script>
   </body>
