@@ -21,8 +21,10 @@
       return ev.preventDefault() && false;
     });
 
-    $('#clean-button').click(function (ev) {
-      $('#expression').val('');
+    $('[data-clean-button]').click(function (ev) {
+      var $div = $('[data-english-form]').find('div .active');
+      $div.find('input').val('');
+      $div.find('textarea').val('');
     });
   });
 })(jQuery);
