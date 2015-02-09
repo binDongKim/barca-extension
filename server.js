@@ -11,11 +11,23 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post('/expressions', function (req, res) {
-  var expression = req.body.expression;
-  fs.appendFile('/Users/qoo/Documents/English - Nice Expressions.md', '>' + expression + '\n\n***\n\n', function (err) {
-    if (err) return console.log(err);
-    res.end('Success');
-  });
+  var content = req.body.content;
+  var id = req.body.id;
+
+  if (id === 'expressions')
+  {
+    fs.appendFile('/Users/qoo/Documents/English - Nice Expressions.md', '\n>' + content + '\n\n***\n', function (err) {
+      if (err) return console.log(err);
+      res.end('Success');
+    });
+  }
+  else // id === 'ask-to-briana'
+  {
+    fs.appendFile('/Users/qoo/Documents/English - Ask To Briana.md', '\n>' + content + '\n\n***\n', function (err) {
+      if (err) return console.log(err);
+      res.end('Success');
+    });
+  }
 });
 
 app.listen(8000, function () {
