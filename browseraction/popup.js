@@ -5,25 +5,52 @@
       var divId = $div.attr('id');
       switch (divId) {
         case 'words':
+          var english = $div.find('input[name="english"]').val();
+          var korean = $div.find('input[name="korean"]').val();
+          var example = $div.find('textarea').val();
+          if (!english || !korean || !example)
+          {
+            swal('Content required!');
+          }
+          else
+          {
+            $.post('http://localhost:8000/words', { english: english, korean: korean, example: example }, function (res) {
+              if (res === 'Success')
+              {
+                swal('Added');
+              }
+              else
+              {
+                swal('Something wrong!');
+              }
+            }).fail(function() {
+              swal('Run Server first!');
+            });
+          }
+          break;
         case 'expressions':
         case 'ask-to-briana':
           var content = $div.find('textarea').val();
-          if (! content)
+          if (!content)
           {
             swal('Content required!');
           }
           else
           {
             $.post('http://localhost:8000/expressions', { content: content, id: divId }, function (res) {
-              if (res === 'Success') {
+              if (res === 'Success')
+              {
                 swal('Added!');
-              } else {
+              }
+              else
+              {
                 swal('Something wrong!');
               }
             }).fail(function () {
               swal('Run Server first!');
             });
           }
+          break;
       }
       return ev.preventDefault() && false;
     });

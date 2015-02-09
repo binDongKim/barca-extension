@@ -10,6 +10,17 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.post('/words', function (req, res) {
+  var english = req.body.english;
+  var korean = req.body.korean;
+  var example = req.body.example;
+
+  fs.appendFile('/Users/qoo/Documents/English - Words.md', '| ' + english + ' | ' + korean + ' | ' + example + ' |\n', function (err) {
+    if (err) return console.log(err);
+    res.end('Success');
+  });
+});
+
 app.post('/expressions', function (req, res) {
   var content = req.body.content;
   var id = req.body.id;
