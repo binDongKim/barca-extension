@@ -52,7 +52,7 @@
           }
           break;
       }
-      return ev.preventDefault() && false;
+      ev.preventDefault();
     });
 
     $('[data-clean-button]').click(function (ev) {
