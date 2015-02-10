@@ -1,0 +1,28 @@
+{
+  "name": "barca-extension",
+  "version": "1.0.0",
+  "description": "barca-extension",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "express": "^4.11.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binDongKim/barca-extension.git"
+  },
+  "keywords": [
+    "qoo"
+  ],
+  "author": "DongBin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binDongKim/barca-extension/issues"
+  },
+  "homepage": "https://github.com/binDongKim/barca-extension"
+}
