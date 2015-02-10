@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post('/words', function (req, res) {
   var english = req.body.english;
   var korean = req.body.korean;
-  var example = req.body.example;
+  var example = req.body.example.replace(english, '**' + english + '**');
 
   fs.appendFile('/Users/qoo/Documents/English - Words.md', '| ' + english + ' | ' + korean + ' | ' + example + ' |\n', function (err) {
     if (err) return console.log(err);
