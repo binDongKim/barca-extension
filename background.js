@@ -6,7 +6,12 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
 });
 
 chrome.omnibox.onInputEntered.addListener(function(text) {
-  navigate("http://endic.naver.com/search.nhn?sLn=kr&searchOption=all&query=" + text);
+  if (text === "해축") {
+    navigate("https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=해외축구일정");
+  }
+  else {
+    navigate("http://endic.naver.com/search.nhn?sLn=kr&searchOption=all&query=" + text);
+  }
 });
 
 // listening for an event / one-time requests
