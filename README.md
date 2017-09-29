@@ -15,6 +15,7 @@ Currently, it's just used for the simple custom newtab view.
 |2015.02.06 | Add **sweetalert** *(library)* to notice the request is handled or not ( ~~Note that, I manipulated the library to resize the alert~~ ) |
 |2015.02.09 | Extend the functionality to 'Words' and 'Ask-To-Briana' |
 |2017.09.29 | Stop all the functionalities except the custom newtab view |
+|2017.09.29 | Leave the navigation funcionality for the dictionary and football fixture schedule |
 
 ## Contact
 
